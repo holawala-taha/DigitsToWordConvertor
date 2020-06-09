@@ -10,7 +10,7 @@ public class digitsToWordConvertor {
         String digitsString         = String.valueOf(digits);
         List<String> digitList      = new List<String>();
 
-        if(digitsString.length() < 2)
+        if(digitsString.length() <= 2)
             return convertFirstTwoDigitsToNumber(digits);
         
         if(digitsString.length() == 3){
@@ -20,7 +20,7 @@ public class digitsToWordConvertor {
             if(Math.MOD(digits,100) == 0)
                 return convertFirstTwoDigitsToNumber(firstDigit) + ' hundred';
 
-            return convertFirstTwoDigitsToNumber(firstDigit) + ' hundred and ' +   convertFirstTwoDigitsToNumber(otherDigits);
+            return convertFirstTwoDigitsToNumber(firstDigit) + ' hundred ' /*and '*/ +   convertFirstTwoDigitsToNumber(otherDigits);
         }
 
         if(digitsString.length() >=4 && digitsString.length() <=6){
